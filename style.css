@@ -1,0 +1,61 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f172a;
+  color: #e8eefc;
+  font-family: system-ui, sans-serif;
+}
+
+.game {
+  background: #1e293b;
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+  width: min(92vw, 380px);
+}
+
+h1 { margin: 0 0 12px; }
+
+.scoreboard { display: flex; justify-content: center; gap: 10px; margin-bottom: 16px; }
+.scoreboard span { background: #0f172a; padding: 6px 14px; border-radius: 999px; }
+.scoreboard b { color: #facc15; }
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.cell {
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 12px;
+  background: #334155;
+  font-size: clamp(40px, 14vw, 64px);
+  font-weight: 800;
+  cursor: pointer;
+  color: #e8eefc;
+}
+
+.cell:hover:not(:disabled) { background: #3d4d66; }
+.cell.x { color: #4ade80; }
+.cell.o { color: #f87171; }
+.cell.win { background: #166534; }
+
+.message { min-height: 1.5em; margin: 14px 0 8px; font-weight: 700; color: #4ade80; }
+
+button#restart {
+  background: #4ade80;
+  color: #06210f;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+}
